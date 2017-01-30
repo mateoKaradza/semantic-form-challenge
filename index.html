@@ -3,69 +3,87 @@
   <head>
     <meta charset="utf-8" />
     <title>Semantic Form Challenge</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet">
   </head>
   <body>
-    <form>
-      <h1>Sign Up Now</h1>
-      <p>Pick your new website, free forever.</p>
+    <form class="signup-form">
+      <div class="container">
+        <h1>Sign Up Now</h1>
+        <p>Pick your new website, free forever.</p>
+      </div>
       <hr />
-      <ol>
-        <li>
-          <h2>Pick a website address.</h2>
-          <fieldset>
-            <label>Website address:</label>
-            <input placeholder="desiredsubdomain" autofocus/>
-            <span>.free-website.com</span>
-          </fieldset>
-        </li>
-        <li>
-          <h2>Create an account.</h2>
-          <fieldset>
-            <label>Full name:</label>
-            <input />
-            <label>Email address:</label>
-            <input type="email"/>
-            <label>Password:</label>
-            <input type="password"/>
-            <input type="checkbox" />
-            <label>Reveal password</label>
-          </fieldset>
-        </li>
-        <li>
-          <h2>Enter your payment information.</h2>
-          <fieldset>
-            <label>Credit card number:</label>
-            <input />
-            <img src="assets/images/cc-icon-amex.png"
-              alt="amex credit card" />
-            <img src="assets/images/cc-icon-discover.png"
-              alt="discover credit card" >
-            <img src="assets/images/cc-icon-mastercard.png"
-              alt="mastercard credit card" >
-            <img src="assets/images/cc-icon-visa.png"
-              alt="visa credit card" >
+      <div class="container">
+        <span class="stage">1</span><h2>Pick a website address.</h2>
+        <fieldset>
+          <label>Website address:</label>
+          <div class="outline full-width">
+            <input placeholder="yoursubdomain"
+              autofocus class="width-60 full-height no-border"
+              /><!--
+            --><span>.free-website.com</span>
+          </div>
+        </fieldset>
+        <span class="stage">2</span><h2>Create an account.</h2>
+        <fieldset>
+          <label>Full name:</label>
+          <input class="outline full-width" />
+          <label>Email address:</label>
+          <input type="email" class="outline full-width" />
+          <label>Password:</label>
+          <input type="password"
+            class="outline full-width" />
+          <div>
+            <input type="checkbox" id="password-visible" name="password-visible"/><!--
+            --><label for="password-visible">Reveal password</label>
+          </div>
+        </fieldset>
+        <span class="stage">3</span><h2>Enter your payment information.</h2>
+        <fieldset>
+          <div class="full-width">
+            <label class="block">Credit card number:</label>
+            <input class="outline" /><!--
+            --><div class="cc">
+              <img src="assets/images/cc-icon-visa.png"
+                alt="visa credit card" /><!--
+              --><img src="assets/images/cc-icon-mastercard.png"
+                alt="mastercard credit card" /><!--
+              --><img src="assets/images/cc-icon-discover.png"
+                alt="discover credit card" /><!--
+              --><img src="assets/images/cc-icon-amex.png"
+                alt="amex credit card" />
+            </div>
+          </div>
+          <div class="security-code-box">
             <label>Security code:</label>
-            <input />
+            <input class="full-width outline" placeholder="123" />
+          </div>
+          <div class="expiration-date-box">
             <label>Expiration date:</label>
-            <select>
-              <option value="01">01 - January</option>
-              <option value="02">02 - February</option>
-              <option value="03">03 - March</option>
-              <option value="04">04 - April</option>
-              <option value="05">05 - May</option>
-              <option value="06">06 - June</option>
-              <option value="07">07 - July</option>
-              <option value="08">08 - August</option>
-              <option value="09">09 - September</option>
-              <option value="10">10 - October</option>
-              <option value="11">11 - November</option>
-              <option value="12">12 - December</option>
-            </select>
-            <input type="number" required step=1 min="1950" max="2025"/>
-          </fieldset>
-        </li>
-      </ol>
-      <button type="submit">Create your website</button>
+            <div class="block">
+              <select class="month-picker outline">
+                <option value="01">01 - January</option>
+                <option value="02">02 - February</option>
+                <option value="03">03 - March</option>
+                <option value="04">04 - April</option>
+                <option value="05">05 - May</option>
+                <option value="06">06 - June</option>
+                <option value="07">07 - July</option>
+                <option value="08">08 - August</option>
+                <option value="09">09 - September</option>
+                <option value="10">10 - October</option>
+                <option value="11">11 - November</option>
+                <option value="12">12 - December</option>
+              </select><!--
+              --><input type="number" class="year-picker outline"
+                required step=1 min="1950" max="2025"/>
+          </div>
+          </div>
+        </fieldset>
+        <button type="submit">Create your website</button>
+      </div>
     </form>
   </body>
 </html>
