@@ -22,7 +22,7 @@
           <div class="outline full-width">
             <input id="subdomain" placeholder="yoursubdomain"
               autofocus class="width-60 full-height no-border"
-              autocomplete="off"
+              autocomplete="off" required
               /><!--
             --><span>.free-website.com</span>
           </div>
@@ -30,14 +30,15 @@
         <span class="stage">2</span><h2>Create an account.</h2>
         <fieldset>
           <label for="full-name">Full name:</label>
-          <input id="full-name" class="outline full-width" />
+          <input id="full-name" class="outline full-width" required />
           <label for="email">Email address:</label>
           <input id="email" type="email" class="outline full-width"
-            oninvalid="emailError()" />
+            oninvalid="emailError()" required />
           <label for="password">Password:</label>
-          <input id="password" type="password" class="outline full-width"  />
+          <input id="password" type="password" class="outline full-width"
+            required />
           <input id="password-visible" type="checkbox"
-            name="password-visible"/><!--
+            name="password-visible" onclick="handlePasswordReveal(this)"/><!--
           --><label for="password-visible">Reveal password</label>
           <noscript>
             <p class="alert">
@@ -50,7 +51,7 @@
         <fieldset>
           <div class="full-width">
             <label class="block" for="cc-number">Credit card number:</label>
-            <input id="cc-number" class="outline"
+            <input id="cc-number" class="outline" required
               pattern="[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}"
               title="Please fill in the credit card info using the right format."/><!--
             --><div class="cc">
@@ -70,8 +71,8 @@
           </div>
           <div class="security-code-box">
             <label for="security-code">Security code:</label>
-            <input id="security-code" class="full-width outline"
-              type="number" placeholder="123" min="000" max="999" />
+            <input id="security-code" class="full-width outline" required
+              type="number" placeholder="123" min="000" max="999" step="1" />
           </div>
           <div class="expiration-date-box">
             <label for="expiration-date">Expiration date:</label>
@@ -91,7 +92,8 @@
                 <option value="12">12 - December</option>
               </select><!--
               --><input type="number" class="year-picker outline"
-                  required step=1 min="1950" max="2025"
+                  placeholder="2020" required
+                  step=1 min="1950" max="2025"
                   arialabeledby="expiration-date"/>
           </div>
           </div>
