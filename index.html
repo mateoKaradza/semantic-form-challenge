@@ -18,33 +18,38 @@
       <div class="container">
         <span class="stage">1</span><h2>Pick a website address.</h2>
         <fieldset>
-          <label>Website address:</label>
+          <label for="subdomain">Website address:</label>
           <div class="outline full-width">
-            <input placeholder="yoursubdomain"
+            <input id="subdomain" placeholder="yoursubdomain"
               autofocus class="width-60 full-height no-border"
+              autocomplete="off"
               /><!--
             --><span>.free-website.com</span>
           </div>
         </fieldset>
         <span class="stage">2</span><h2>Create an account.</h2>
         <fieldset>
-          <label>Full name:</label>
-          <input class="outline full-width" />
-          <label>Email address:</label>
-          <input type="email" class="outline full-width" />
-          <label>Password:</label>
-          <input type="password"
-            class="outline full-width" />
-          <div>
-            <input type="checkbox" id="password-visible" name="password-visible"/><!--
-            --><label for="password-visible">Reveal password</label>
-          </div>
+          <label for="full-name">Full name:</label>
+          <input id="full-name" class="outline full-width" />
+          <label for="email">Email address:</label>
+          <input id="email" type="email" class="outline full-width" />
+          <label for="password">Password:</label>
+          <input id="password" type="password" class="outline full-width"  />
+          <input id="password-visible" type="checkbox"
+            name="password-visible"/><!--
+          --><label for="password-visible">Reveal password</label>
+          <noscript>
+            <p>
+              You disabled JavaScript. <br />
+              You won't be able to reveal your password using this option.
+            </p>
+          </noscript>
         </fieldset>
         <span class="stage">3</span><h2>Enter your payment information.</h2>
         <fieldset>
           <div class="full-width">
-            <label class="block">Credit card number:</label>
-            <input class="outline" /><!--
+            <label class="block" for="cc-number">Credit card number:</label>
+            <input id="cc-number" class="outline" /><!--
             --><div class="cc">
               <img src="assets/images/cc-icon-visa.png"
                 alt="visa credit card" /><!--
@@ -57,13 +62,14 @@
             </div>
           </div>
           <div class="security-code-box">
-            <label>Security code:</label>
-            <input class="full-width outline" placeholder="123" />
+            <label for="security-code">Security code:</label>
+            <input id="security-code" class="full-width outline"
+              placeholder="123" />
           </div>
           <div class="expiration-date-box">
-            <label>Expiration date:</label>
+            <label for="expiration-date">Expiration date:</label>
             <div class="block">
-              <select class="month-picker outline">
+              <select id="expiration-date" class="month-picker outline">
                 <option value="01">01 - January</option>
                 <option value="02">02 - February</option>
                 <option value="03">03 - March</option>
@@ -78,7 +84,8 @@
                 <option value="12">12 - December</option>
               </select><!--
               --><input type="number" class="year-picker outline"
-                required step=1 min="1950" max="2025"/>
+                  required step=1 min="1950" max="2025"
+                  arialabeledby="expiration-date"/>
           </div>
           </div>
         </fieldset>

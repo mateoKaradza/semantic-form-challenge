@@ -57,7 +57,12 @@ input, select {
 }
 
 input[type="checkbox"] {
-  display:none;
+  position: absolute;
+  left: -999px;
+}
+
+input[type="checkbox"]:focus + label:before {
+  border: 2px solid skyblue;
 }
 
 input[type="checkbox"] + label {
