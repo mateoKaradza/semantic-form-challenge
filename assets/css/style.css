@@ -175,6 +175,10 @@ input[type="checkbox"]:checked + label:before {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .cc {
   display: inline-block;
   line-height: 40px;
@@ -190,6 +194,38 @@ input[type="checkbox"]:checked + label:before {
 
 .cc img:last-child {
   margin-right: 0;
+}
+
+.alert {
+  color: #D3000D;
+  line-height: 30px;
+  font-size: 13px;
+}
+
+.alert span {
+  vertical-align: text-bottom;
+}
+
+.alert img {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.warning {
+  background-image: url(../images/warning-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #D3000D;
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .warning {
+      background-image: url(../images/warning-icon@2x.png);
+    }
 }
 
 button {

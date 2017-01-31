@@ -32,15 +32,16 @@
           <label for="full-name">Full name:</label>
           <input id="full-name" class="outline full-width" />
           <label for="email">Email address:</label>
-          <input id="email" type="email" class="outline full-width" />
+          <input id="email" type="email" class="outline full-width"
+            oninvalid="emailError()" />
           <label for="password">Password:</label>
           <input id="password" type="password" class="outline full-width"  />
           <input id="password-visible" type="checkbox"
             name="password-visible"/><!--
           --><label for="password-visible">Reveal password</label>
           <noscript>
-            <p>
-              You disabled JavaScript. <br />
+            <p class="alert">
+              Your browser has JavaScript disabled. <br />
               You won't be able to reveal your password using this option.
             </p>
           </noscript>
@@ -49,22 +50,28 @@
         <fieldset>
           <div class="full-width">
             <label class="block" for="cc-number">Credit card number:</label>
-            <input id="cc-number" class="outline" /><!--
+            <input id="cc-number" class="outline"
+              pattern="[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}"
+              title="Please fill in the credit card info using the right format."/><!--
             --><div class="cc">
               <img src="assets/images/cc-icon-visa.png"
+                srcset="assets/images/cc-icon-visa.png 1x, assets/images/cc-icon-visa@2x.png 2x"
                 alt="visa credit card" /><!--
               --><img src="assets/images/cc-icon-mastercard.png"
+                srcset="assets/images/cc-icon-mastercard.png 1x, assets/images/cc-icon-mastercard@2x.png 2x"
                 alt="mastercard credit card" /><!--
               --><img src="assets/images/cc-icon-discover.png"
+                srcset="assets/images/cc-icon-discover.png 1x, assets/images/cc-icon-discover@2x.png 2x"
                 alt="discover credit card" /><!--
               --><img src="assets/images/cc-icon-amex.png"
+                srcset="assets/images/cc-icon-amex.png 1x, assets/images/cc-icon-amex@2x.png 2x"
                 alt="amex credit card" />
             </div>
           </div>
           <div class="security-code-box">
             <label for="security-code">Security code:</label>
             <input id="security-code" class="full-width outline"
-              placeholder="123" />
+              type="number" placeholder="123" min="000" max="999" />
           </div>
           <div class="expiration-date-box">
             <label for="expiration-date">Expiration date:</label>
@@ -92,5 +99,6 @@
         <button type="submit">Create your website</button>
       </div>
     </form>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
