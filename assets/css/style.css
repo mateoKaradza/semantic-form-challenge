@@ -225,6 +225,7 @@ input[type="checkbox"]:checked + label:before {
 (min-resolution: 192dpi) {
     .warning {
       background-image: url(../images/warning-icon@2x.png);
+      background-size: 2px 14px;
     }
 }
 
