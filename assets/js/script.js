@@ -5,6 +5,11 @@ function handlePasswordReveal(e) {
 }
 
 function emailError() {
+  const emailErrorDiv = document.getElementById("emailError");
+
+  if (emailErrorDiv)
+    emailErrorDiv.remove();
+  
   let div = document.createElement("div");
   let warningIcon = document.createElement("img");
   let span = document.createElement("span");
@@ -13,6 +18,7 @@ function emailError() {
   const email = document.getElementById("email");
 
   div.className = "alert";
+  div.id = "emailError";
   warningIcon.className = "warning";
 
   span.appendChild(text);
