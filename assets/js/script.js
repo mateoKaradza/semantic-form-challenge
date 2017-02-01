@@ -1,3 +1,35 @@
+let supportedCards = [
+  {
+    id: 'visa-cc',
+    pattern: '^4[0-9]{6,}$'
+  },
+  {
+    id: 'mastercard-cc',
+    pattern: '^5[1-5][0-9]{14}$'
+  },
+  {
+    id: 'amex-cc',
+    pattern: '^3[47][0-9]{5,}$'
+  },
+  {
+    id: 'discover-cc',
+    pattern: '^3(?:0[0-5]|[68][0-9])[0-9]{4,}$'
+  }
+]
+
+function handleCreditCardInput(e) {
+  for (let index in supportedCards) {
+    let card = supportedCards[index];
+    let regex = new RegExp(card.pattern);
+    const inputValue = e.value.replace(/ /g, "");
+
+    document.getElementById(card.id).className = "hide-cc";
+
+    if (regex.test(inputValue))
+      document.getElementById(card.id).className = "";
+  }
+}
+
 function handlePasswordReveal(e) {
   if (e.checked)
     return document.getElementById("password").type = "text";
@@ -13,7 +45,7 @@ function clearError() {
 
 function emailError() {
   clearError();
-  
+
   let div = document.createElement("div");
   let warningIcon = document.createElement("img");
   let span = document.createElement("span");

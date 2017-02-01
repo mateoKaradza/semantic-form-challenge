@@ -142,6 +142,10 @@ input[type="checkbox"]:checked + label:after {
   box-shadow: inset rgba(100, 110, 114, 0.33) 0 2px 3px;
 }
 
+.hide-cc {
+  opacity: 0.35;
+}
+
 .security-code-box {
   display: inline-block;
   width: 130px;
