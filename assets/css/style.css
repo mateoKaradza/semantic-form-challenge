@@ -25,12 +25,11 @@ h2 {
   font-size: 24px;
 }
 
-hr {
+.divider {
   margin: 35px auto;
   width: 460px;
   background-color: #A8CCD5;
-  height: 2px;
-  border: 0;
+  height: 1px;
 }
 
 fieldset {
