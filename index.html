@@ -8,98 +8,116 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
       rel="stylesheet">
+      <noscript><style> .cc { display: none } </style></noscript>
   </head>
   <body>
     <form class="signup-form">
       <div class="container">
-        <h1>Sign Up Now</h1>
-        <p>Pick your new website, free forever.</p>
+        <legend class="main-header">Sign Up Now</legend>
+        <span>Pick your new website, free forever.</span>
       </div>
       <svg class="divider">
         <line y1="1" y2="1" x1="10" x2="90%" shape-rendering="crispEdges" />
       </svg>
       <div class="container">
-        <span class="stage">1</span><h2>Pick a website address.</h2>
-        <fieldset>
-          <label for="subdomain">Website address:</label>
-          <input id="subdomain" placeholder="yoursubdomain"
-            autofocus class="outline full-width subdomain"
-            autocomplete="off" required
-            /><!--
-          --><label class="domain-suffix">.free-website.com</label>
-        </fieldset>
-        <span class="stage">2</span><h2>Create an account.</h2>
-        <fieldset>
-          <label for="full-name">Full name:</label>
-          <input id="full-name" class="outline full-width" required />
-          <label for="email">Email address:</label>
-          <input id="email" type="email" class="outline full-width"
-            oninvalid="emailError()" onkeypress="clearError()" required />
-          <label for="password">Password:</label>
-          <input id="password" type="password" class="outline full-width"
-            required />
-          <input id="password-visible" type="checkbox"
-            name="password-visible" onclick="handlePasswordReveal(this)"/><!--
-          --><label for="password-visible">Reveal password</label>
-          <noscript>
-            <p class="alert">
-              Your browser has JavaScript disabled. <br />
-              You won't be able to reveal your password using this option.
-            </p>
-          </noscript>
-        </fieldset>
-        <span class="stage">3</span><h2>Enter your payment information.</h2>
-        <fieldset>
-          <div class="full-width">
-            <label class="block" for="cc-number">Credit card number:</label>
-            <input id="cc-number" class="outline" required
-              onkeyup="handleCreditCardInput(this)"
-              pattern="[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}"
-              title="Please fill in the credit card info using the right format."/><!--
-            --><div class="cc">
-              <img id="visa-cc" src="assets/images/cc-icon-visa.png"
-                srcset="assets/images/cc-icon-visa.png 1x, assets/images/cc-icon-visa@2x.png 2x"
-                alt="visa credit card" class="hide-cc" /><!--
-              --><img id="mastercard-cc" src="assets/images/cc-icon-mastercard.png"
-                srcset="assets/images/cc-icon-mastercard.png 1x, assets/images/cc-icon-mastercard@2x.png 2x"
-                alt="mastercard credit card" class="hide-cc" /><!--
-              --><img id="discover-cc" src="assets/images/cc-icon-discover.png"
-                srcset="assets/images/cc-icon-discover.png 1x, assets/images/cc-icon-discover@2x.png 2x"
-                alt="discover credit card" class="hide-cc" /><!--
-              --><img id="amex-cc" src="assets/images/cc-icon-amex.png"
-                srcset="assets/images/cc-icon-amex.png 1x, assets/images/cc-icon-amex@2x.png 2x"
-                alt="amex credit card" class="hide-cc" />
-            </div>
-          </div>
-          <div class="security-code-box">
-            <label for="security-code">Security code:</label>
-            <input id="security-code" class="full-width outline" required
-              pattern="[0-9]{3,4}"
-              title="Security code should be 3 or 4 digits long" />
-          </div>
-          <div class="expiration-date-box">
-            <label for="expiration-date">Expiration date:</label>
-            <div class="block">
-              <select id="expiration-date" class="month-picker outline">
-                <option value="01">01 - January</option>
-                <option value="02">02 - February</option>
-                <option value="03">03 - March</option>
-                <option value="04">04 - April</option>
-                <option value="05">05 - May</option>
-                <option value="06">06 - June</option>
-                <option value="07">07 - July</option>
-                <option value="08">08 - August</option>
-                <option value="09">09 - September</option>
-                <option value="10">10 - October</option>
-                <option value="11">11 - November</option>
-                <option value="12">12 - December</option>
-              </select><!--
-              --><input class="year-picker outline" required
-                  arialabeledby="expiration-date" pattern="[0-9]{4}"
-                  title="You should write year in YYYY format, ex. 2017" />
-          </div>
-          </div>
-        </fieldset>
+        <ol>
+          <li>
+            <legend>Pick a website address.</legend>
+            <fieldset>
+            <label for="subdomain">Website address:</label>
+            <input id="subdomain" placeholder="yoursubdomain"
+              autofocus class="outline full-width subdomain"
+              autocomplete="off" required
+              /><!--
+            --><label class="domain-suffix">.free-website.com</label>
+            </fieldset>
+          </li>
+        <li>
+          <legend>Create an account.</legend>
+          <fieldset>
+            <label for="full-name">Full name:</label>
+            <input id="full-name" class="outline full-width" required />
+            <label for="email">Email address:</label>
+            <input id="email" type="email" class="outline full-width"
+              oninvalid="emailError()" onkeypress="clearError()" required />
+            <label for="password">Password:</label>
+            <input id="password" type="password" class="outline full-width"
+              required />
+            <input id="password-visible" type="checkbox"
+              name="password-visible" onclick="handlePasswordReveal(this)"/><!--
+            --><label for="password-visible">Reveal password</label>
+            <noscript>
+              <span class="alert">
+                Your browser has JavaScript disabled. <br />
+                You won't be able to reveal your password using this option.
+              </span>
+            </noscript>
+          </fieldset>
+          </li>
+          <li>
+            <legend>Enter your payment information.</legend>
+            <fieldset>
+              <div class="full-width">
+                <label class="block" for="cc-number">Credit card number:</label>
+                <input id="cc-number" class="outline" required
+                  onkeyup="handleCreditCardInput(this)"
+                  pattern="[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}"
+                  title="Please fill in the credit card info using the right format."/><!--
+                --><div class="cc">
+                  <img id="visa-cc" src="assets/images/cc-icon-visa.png"
+                    srcset="assets/images/cc-icon-visa.png 1x, assets/images/cc-icon-visa@2x.png 2x"
+                    alt="visa credit card" class="hide-cc" /><!--
+                  --><img id="mastercard-cc" src="assets/images/cc-icon-mastercard.png"
+                    srcset="assets/images/cc-icon-mastercard.png 1x, assets/images/cc-icon-mastercard@2x.png 2x"
+                    alt="mastercard credit card" class="hide-cc" /><!--
+                  --><img id="discover-cc" src="assets/images/cc-icon-discover.png"
+                    srcset="assets/images/cc-icon-discover.png 1x, assets/images/cc-icon-discover@2x.png 2x"
+                    alt="discover credit card" class="hide-cc" /><!--
+                  --><img id="amex-cc" src="assets/images/cc-icon-amex.png"
+                    srcset="assets/images/cc-icon-amex.png 1x, assets/images/cc-icon-amex@2x.png 2x"
+                    alt="amex credit card" class="hide-cc" />
+                </div>
+                <noscript>
+                  <select required class="card-picker outline" >
+                    <option value="" selected disabled>Card type</option>
+                    <option value="visa-cc">Visa</option>
+                    <option value="mastercard-cc">Mastercard</option>
+                    <option value="discover-cc">Discover</option>
+                    <option value="amex-cc">Amex</option>
+                  </select>
+                </noscript>
+              </div>
+              <div class="security-code-box">
+                <label for="security-code">Security code:</label>
+                <input id="security-code" class="full-width outline" required
+                  pattern="[0-9]{3,4}"
+                  title="Security code should be 3 or 4 digits long" />
+              </div>
+              <div class="expiration-date-box">
+                <label for="expiration-date">Expiration date:</label>
+                <div class="block">
+                  <select id="expiration-date" class="month-picker outline">
+                    <option value="01">01 - January</option>
+                    <option value="02">02 - February</option>
+                    <option value="03">03 - March</option>
+                    <option value="04">04 - April</option>
+                    <option value="05">05 - May</option>
+                    <option value="06">06 - June</option>
+                    <option value="07">07 - July</option>
+                    <option value="08">08 - August</option>
+                    <option value="09">09 - September</option>
+                    <option value="10">10 - October</option>
+                    <option value="11">11 - November</option>
+                    <option value="12">12 - December</option>
+                  </select><!--
+                  --><input class="year-picker outline" required
+                      arialabeledby="expiration-date" pattern="[0-9]{4}"
+                      title="You should write year in YYYY format, ex. 2017" />
+              </div>
+              </div>
+            </fieldset>
+          </li>
+        </ol>
         <button type="submit">Create your website</button>
       </div>
     </form>

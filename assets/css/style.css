@@ -11,18 +11,15 @@ body, input {
   color: #646E72;
 }
 
-h1, h2 {
+legend {
   color: #4C8DD0;
   padding-bottom: 10px;
+  font-size: 24px;
 }
 
-h1 {
+legend.main-header {
   font-size: 36px;
   font-weight: 600;
-}
-
-h2 {
-  font-size: 24px;
 }
 
 .divider {
@@ -96,7 +93,13 @@ input[type="checkbox"]:checked + label:after {
   vertical-align: top;
 }
 
-.stage {
+.signup-form {
+  width: 540px;
+  border: 20px solid #A8CCD5;
+  padding: 20px;
+}
+
+ol li:before {
   position: absolute;
   left: 5px;
   width: 30px;
@@ -111,10 +114,16 @@ input[type="checkbox"]:checked + label:after {
   text-align: center;
 }
 
-.signup-form {
-  width: 540px;
-  border: 20px solid #A8CCD5;
-  padding: 20px;
+ol li:nth-of-type(1):before {
+  content:"1";
+}
+
+ol li:nth-of-type(2):before {
+  content:"2";
+}
+
+ol li:nth-of-type(3):before {
+  content:"3";
 }
 
 .outline {
@@ -155,6 +164,15 @@ input[type="checkbox"]:checked + label:after {
 .expiration-date-box {
   display: inline-block;
   width: 250px;
+}
+
+.card-picker {
+  width: 150px;
+  margin-right: 10px;
+  height: 42px;
+  font-size: 16px;
+  color: #646E72;
+  vertical-align: bottom;
 }
 
 .month-picker {
