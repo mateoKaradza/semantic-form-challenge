@@ -47,7 +47,7 @@ label {
   margin-bottom: 10px;
 }
 
-input, select {
+input {
   border-radius: 3px;
   border-color: #F2F3F4;
   background-color: #FFF;
@@ -81,10 +81,19 @@ input[type="checkbox"] + label:before {
   vertical-align: top;
   width: 20px;
 }
-input[type="checkbox"]:checked + label:before {
+input[type="checkbox"]:checked + label:after {
   background-image: url("../images/check-icon.png");
   background-repeat: no-repeat;
-  background-position: 2px 0;
+  background-position: 2px 3px;
+  content: "\00a0";
+  display: inline-block;
+  position: absolute;
+  left: 72px;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: top;
 }
 
 .stage {
@@ -116,13 +125,21 @@ input[type="checkbox"]:checked + label:before {
   height: 42px;
 }
 
-.outline span {
+.subdomain {
+  padding-right: 165px;
+}
+
+.domain-suffix {
   display: inline-block;
+  position: absolute;
+  margin-left: -154px;
+  margin-top: 1px;
   background-color: #E8EAEB;
-  padding: 0 8px;
-  width: 40%;
-  height: 100%;
+  padding: 0 10px;
+  height: 40px;
   line-height: 40px;
+  border-color: #F2F3F4;
+  box-shadow: inset rgba(100, 110, 114, 0.33) 0 2px 3px;
 }
 
 .security-code-box {

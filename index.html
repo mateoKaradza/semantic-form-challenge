@@ -22,13 +22,11 @@
         <span class="stage">1</span><h2>Pick a website address.</h2>
         <fieldset>
           <label for="subdomain">Website address:</label>
-          <div class="outline full-width">
-            <input id="subdomain" placeholder="yoursubdomain"
-              autofocus class="width-60 full-height no-border"
-              autocomplete="off" required
-              /><!--
-            --><span>.free-website.com</span>
-          </div>
+          <input id="subdomain" placeholder="yoursubdomain"
+            autofocus class="outline full-width subdomain"
+            autocomplete="off" required
+            /><!--
+          --><label class="domain-suffix">.free-website.com</label>
         </fieldset>
         <span class="stage">2</span><h2>Create an account.</h2>
         <fieldset>
@@ -36,7 +34,7 @@
           <input id="full-name" class="outline full-width" required />
           <label for="email">Email address:</label>
           <input id="email" type="email" class="outline full-width"
-            oninvalid="emailError()" required />
+            oninvalid="emailError()" onkeypress="clearError()" required />
           <label for="password">Password:</label>
           <input id="password" type="password" class="outline full-width"
             required />

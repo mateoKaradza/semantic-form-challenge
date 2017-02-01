@@ -4,11 +4,15 @@ function handlePasswordReveal(e) {
   document.getElementById("password").type = "password";
 }
 
-function emailError() {
+function clearError() {
   const emailErrorDiv = document.getElementById("emailError");
 
   if (emailErrorDiv)
     emailErrorDiv.remove();
+}
+
+function emailError() {
+  clearError();
   
   let div = document.createElement("div");
   let warningIcon = document.createElement("img");
