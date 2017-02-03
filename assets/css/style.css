@@ -131,7 +131,7 @@ ol li:nth-of-type(3):before {
   border: 1px solid #33a2bd;
   border-radius: 3px;
   margin-bottom: 10px;
-  height: 42px;
+  height: 40px;
 }
 
 .subdomain {
@@ -141,18 +141,74 @@ ol li:nth-of-type(3):before {
 .domain-suffix {
   display: inline-block;
   position: absolute;
-  margin-left: -154px;
-  margin-top: 1px;
+  top: 236px;
+  left: 316px;
   background-color: #E8EAEB;
   padding: 0 10px;
-  height: 40px;
-  line-height: 40px;
+  height: 38px;
+  line-height: 38px;
   border-color: #F2F3F4;
   box-shadow: inset rgba(100, 110, 114, 0.33) 0 2px 3px;
 }
 
-.hide-cc {
-  opacity: 0.35;
+#cc-number {
+  width: 218px;
+}
+
+.cc {
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 24px;
+}
+
+.cc label {
+  opacity: 0.35
+}
+
+.cc label.full-opacity {
+  opacity: 1;
+}
+
+.cc input[type="radio"] {
+  position: absolute;
+  left: -999px;
+}
+
+.cc input[type="radio"] + label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.cc label:last-of-type::before{
+  margin-right: 0;
+}
+
+.cc label::before {
+  display: inline-block;
+  margin-right: 4px;
+  height: 24px;
+  width: 40px;
+  content: "\00a0";
+}
+
+.cc input[type="radio"]:checked + label {
+  opacity: 1;
+}
+
+label.visa-cc-label::before {
+  background-image: url(../images/cc-icon-visa.png)
+}
+
+label.mastercard-cc-label::before {
+  background-image: url(../images/cc-icon-mastercard.png)
+}
+
+label.discover-cc-label::before {
+  background-image: url(../images/cc-icon-discover.png)
+}
+
+label.amex-cc-label::before {
+  background-image: url(../images/cc-icon-amex.png)
 }
 
 .security-code-box {
@@ -166,19 +222,9 @@ ol li:nth-of-type(3):before {
   width: 250px;
 }
 
-.card-picker {
-  width: 150px;
-  margin-right: 10px;
-  height: 42px;
-  font-size: 16px;
-  color: #646E72;
-  vertical-align: bottom;
-}
-
 .month-picker {
   width: 160px;
   margin-right: 10px;
-  height: 42px;
   font-size: 16px;
   color: #646E72;
   vertical-align: bottom;
@@ -201,6 +247,7 @@ ol li:nth-of-type(3):before {
 .full-width {
   width: 100%;
 }
+
 .width-60 {
   width: 60%;
 }
@@ -215,23 +262,6 @@ ol li:nth-of-type(3):before {
 
 .inline-block {
   display: inline-block;
-}
-
-.cc {
-  display: inline-block;
-  line-height: 40px;
-  vertical-align: -webkit-baseline-middle;
-  padding-left: 10px;
-}
-
-.cc img {
-  margin-right: 4px;
-  height: 24px;
-  width: 40px;
-}
-
-.cc img:last-child {
-  margin-right: 0;
 }
 
 .alert {
@@ -265,6 +295,26 @@ ol li:nth-of-type(3):before {
       background-image: url(../images/warning-icon@2x.png);
       background-size: 2px 14px;
     }
+
+    label.visa-cc-label::before {
+      background-image: url(../images/cc-icon-visa@2x.png);
+      background-size: 40px 24px;
+    }
+
+    label.mastercard-cc-label::before {
+      background-image: url(../images/cc-icon-mastercard@2x.png);
+      background-size: 40px 24px;
+    }
+
+    label.discover-cc-label::before {
+      background-image: url(../images/cc-icon-discover@2x.png);
+      background-size: 40px 24px;
+    }
+
+    label.amex-cc-label::before {
+      background-image: url(../images/cc-icon-amex@2x.png);
+      background-size: 40px 24px;
+    }
 }
 
 button {
@@ -278,4 +328,5 @@ button {
   background-color: #4F8ECE;
   border-radius: 3px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
