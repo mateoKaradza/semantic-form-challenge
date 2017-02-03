@@ -72,6 +72,21 @@ function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
+function validateCard(value) {
+  var validated = false;
+
+  for (var index in supportedCards) {
+    var card = supportedCards[index];
+    var regex = new RegExp(card.pattern);
+    var inputValue = value.replace(/ /g, "");
+
+    if (regex.test(inputValue))
+      validated = true;
+  }
+
+  return validated;
+}
+
 function onSubmit(e) {
   var errored = false;
   e.preventDefault();
@@ -79,6 +94,7 @@ function onSubmit(e) {
   for (var index in inputFieldsToCheck) {
     var field = inputFieldsToCheck[index];
     var element2 = document.getElementById(field.id);
+    if (!element2) continue;
     var value = element2.value;
 
     var regex = new RegExp(field.pattern);
@@ -92,6 +108,13 @@ function onSubmit(e) {
       errored = true;
     } else
       clearError(field.id + '-error');
+
+    if (field.id == 'cc-number') {
+      if (!validateCard(value)) {
+        errored = true;
+        generateError(field.errorMessage, field.id + '-error', field.id );
+      }
+    }
   }
 
   if (!errored) {
